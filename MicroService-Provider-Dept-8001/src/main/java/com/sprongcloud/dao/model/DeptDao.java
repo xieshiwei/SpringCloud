@@ -1,9 +1,10 @@
-package com.sprongcloud.dao;
+package com.sprongcloud.dao.model;
+
 
 import org.apache.ibatis.annotations.Mapper;
 
 @Mapper
 public interface DeptDao {
-    public boolean addDept(Dept dept);
+
 
 }
