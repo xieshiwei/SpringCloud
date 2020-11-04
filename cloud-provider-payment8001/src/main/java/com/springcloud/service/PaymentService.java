@@ -1,15 +1,21 @@
 package com.springcloud.service;
 
-import com.springcloud.entities.Payment;
-import org.apache.ibatis.annotations.Param;
+import com.springcloud.dao.PaymentMapper;
+import com.springcloud.dao.model.Payment;
+import org.springframework.stereotype.Service;
 
-/**
- * @auther
- * @create 2020-02-18 10:40
- */
-public interface PaymentService
-{
-    public int create(Payment payment);
+import javax.annotation.Resource;
 
-    public Payment getPaymentById(@Param("id") Long id);
+@Service
+public class PaymentService {
+    @Resource
+    private PaymentMapper paymentMapper;
+
+    public int create(Payment payment) {
+        return paymentMapper.insert(payment);
+    }
+
+    public Payment getPayment(Long id) {
+        return paymentMapper.selectByPrimaryKey(id);
+    }
 }

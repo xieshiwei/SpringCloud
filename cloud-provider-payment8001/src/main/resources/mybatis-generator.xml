@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE generatorConfiguration
+        PUBLIC "-//mybatis.org//DTD MyBatis Generator Configuration 1.0//EN"
+        "http://mybatis.org/dtd/mybatis-generator-config_1_0.dtd">
+
+<generatorConfiguration>
+    <!--mysql 连接数据库jar 这里选择自己本地位置;
+    如果不知道maven本地仓库地址，可以使用EveryThing工具全局搜索mysql-connector-java，找到jar包位置；
+    也可以手动下载一个jar放在指定位置，进行引用。
+    -->
+
+
+    <context id="testTables" targetRuntime="MyBatis3">
+        <plugin type="org.mybatis.generator.plugins.SerializablePlugin"/>
+        <commentGenerator>
+            <property name="suppressDate" value="true"/>
+            <property name="suppressAllComments" value="true"/>
+        </commentGenerator>
+        <!--数据库链接地址账号密码-->
+        <jdbcConnection driverClass="com.mysql.cj.jdbc.Driver"
+                        connectionURL="jdbc:mysql://47.100.240.175:3306/VehiclePlatform?nullCatalogMeansCurrent=true"
+                        userId="now" password="Heycars@2019">
+        </jdbcConnection>
+        <javaTypeResolver>
+            <property name="forceBigDecimals" value="false"/>
+        </javaTypeResolver>
+        <!--生成Model类存放位置-->
+        <javaModelGenerator targetPackage="com.springcloud.dao.model" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+            <property name="trimStrings" value="true"/>
+        </javaModelGenerator>
+        <!--生成映射文件存放位置-->
+        <sqlMapGenerator targetPackage="mapper" targetProject="src/main/resources">
+            <property name="enableSubPackages" value="true"/>
+        </sqlMapGenerator>
+        <!--生成Dao类存放位置-->
+        <!-- 客户端代码，生成易于使用的针对Model对象和XML配置文件 的代码
+                type="ANNOTATEDMAPPER",生成Java Model 和基于注解的Mapper对象
+                type="MIXEDMAPPER",生成基于注解的Java Model 和相应的Mapper对象
+                type="XMLMAPPER",生成SQLMap XML文件和独立的Mapper接口
+        -->
+        <javaClientGenerator type="XMLMAPPER" targetPackage="com.springcloud.dao" targetProject="src/main/java">
+            <property name="enableSubPackages" value="true"/>
+        </javaClientGenerator>
+        <!--生成对应表及类名-->
+        <table schema="SpringCloud" tableName="payment_test"
+               domainObjectName="Payment"
+               enableCountByExample="true"
+               enableUpdateByExample="true" enableDeleteByExample="true"
+               enableSelectByExample="true" selectByExampleQueryId="true">
+            <generatedKey column="Id" sqlStatement="MySql" identity="true"/>
+        </table>
+        <!--生成对应表及类名-->
+        <!--                               <table schema="VehiclePlatform" tableName="pickupspot" domainObjectName="PickupSpot"-->
+        <!--                                      enableCountByExample="true"-->
+        <!--                                      enableUpdateByExample="true" enableDeleteByExample="true"-->
+        <!--                                      enableSelectByExample="true" selectByExampleQueryId="true">-->
+        <!--                                   <generatedKey column="Id" sqlStatement="MySql" identity="true" />-->
+        <!--                               </table>-->
+        <!--生成对应表及类名-->
+        <!--                       <table schema="VehiclePlatform" tableName="orderfee" domainObjectName="Orderfee"-->
+        <!--                              enableCountByExample="true"-->
+        <!--                              enableUpdateByExample="true" enableDeleteByExample="true"-->
+        <!--                              enableSelectByExample="true" selectByExampleQueryId="true">-->
+        <!--                           <generatedKey column="Id" sqlStatement="MySql" identity="true" />-->
+        <!--                       </table>-->
+
+        <!--生成对应表及类名-->
+        <!--               <table schema="VehiclePlatform" tableName="orderfee" domainObjectName="Orderfee"-->
+        <!--                      enableCountByExample="true"-->
+        <!--                      enableUpdateByExample="true" enableDeleteByExample="true"-->
+        <!--                      enableSelectByExample="true" selectByExampleQueryId="true">-->
+        <!--                   <generatedKey column="Id" sqlStatement="MySql" identity="true" />-->
+        <!--               </table>-->
+        <!--生成对应表及类名-->
+        <!--       <table schema="VehiclePlatform" tableName="orderconfig" domainObjectName="OrderConfig"-->
+        <!--              enableCountByExample="true"-->
+        <!--              enableUpdateByExample="true" enableDeleteByExample="true"-->
+        <!--              enableSelectByExample="true" selectByExampleQueryId="true">-->
+        <!--           <generatedKey column="OrderConfigID" sqlStatement="MySql" identity="true"/>-->
+        <!--       </table>-->
+        <!--        <table schema="VehiclePlatform" tableName="orderchannelextends" domainObjectName="OrderChannelExtends"-->
+        <!--               enableCountByExample="true"-->
+        <!--               enableUpdateByExample="true" enableDeleteByExample="true"-->
+        <!--               enableSelectByExample="true" selectByExampleQueryId="true">-->
+        <!--            <generatedKey column="OrderChannelExtendsID" sqlStatement="MySql" identity="true"/>-->
+        <!--        </table>-->
+
+        <!-- 指定数据库表
+        domainObjectName：生成的domain类的名字,当表名和domain类的名字有差异时一定要设置，如果不设置，直接使用表名作为domain类的名字；
+        可以设置为somepck.domainName，那么会自动把domainName类再放到somepck包里面；
+        -->
+<!--        <table tableName="buscitymapping" domainObjectName="BusCityMapping"></table>-->
+    </context>
+</generatorConfiguration>
