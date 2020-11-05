@@ -1,7 +1,7 @@
 package com.springcloud.controller;
 
-import com.springcloud.dao.model.Payment;
 import com.springcloud.entities.CommonResult;
+import com.springcloud.entities.Payment;
 import com.springcloud.service.PaymentService;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Value;
@@ -34,7 +34,7 @@ public class PaymentController {
     public CommonResult<Payment> getPaymentById(@PathVariable("id") Long id) {
         Payment payment = paymentService.getPayment(id);
         if (payment != null) {
-            return new CommonResult(200, "查询成功,serverPort:  " + serverPort, payment);
+            return new CommonResult(200, "查询成功,serverPort: " + serverPort, payment);
         } else {
             return new CommonResult(444, "没有对应记录,查询ID: " + id, null);
         }

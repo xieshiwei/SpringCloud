@@ -1,13 +1,18 @@
-package com.springcloud.dao.model;
+package com.springcloud.entities;
+
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
 
+/**
+ * 支付实体
+ */
 public class Payment implements Serializable {
     private Long id;
 
     private String serial;
-
-    private static final long serialVersionUID = 1L;
 
     public Long getId() {
         return id;

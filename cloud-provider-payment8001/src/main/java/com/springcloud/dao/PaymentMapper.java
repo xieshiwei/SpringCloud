@@ -1,10 +1,10 @@
 package com.springcloud.dao;
 
-import com.springcloud.dao.model.Payment;
 import com.springcloud.dao.model.PaymentExample;
 
 import java.util.List;
 
+import com.springcloud.entities.Payment;
 import org.apache.ibatis.annotations.Mapper;
 import org.apache.ibatis.annotations.Param;
 
