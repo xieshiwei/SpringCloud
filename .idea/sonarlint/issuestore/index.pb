@@ -7,3 +7,7 @@ R
 Mcloud-provider-payment8001/src/main/java/com/springcloud/paymentMain8001.java,b\8\b8d028a61cc620d174ad1cf6b32f8655e1a6f206
 O
 cloud-eureka-server7001/pom.xml,1\0\102e18b64a275ebd8dfa2168607577b0e641d1d7
+y
+Icloud-eureka-server7001/src/main/java/com/springcloud/EurekaMain7001.java,f\3\f3d7a060c5fcc7af0fe1e9d4a94a269ac838b503
+I
+cloud-api-commons/pom.xml,8\c\8cf05d42505ff49047085dd6dd68bf86e15d37a4
