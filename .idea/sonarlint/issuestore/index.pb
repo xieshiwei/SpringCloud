@@ -11,3 +11,11 @@ y
 Icloud-eureka-server7001/src/main/java/com/springcloud/EurekaMain7001.java,f\3\f3d7a060c5fcc7af0fe1e9d4a94a269ac838b503
 I
 cloud-api-commons/pom.xml,8\c\8cf05d42505ff49047085dd6dd68bf86e15d37a4
+X
+(cloud-providerconsul-payment8006/pom.xml,2\b\2b5ee1939879347715749e39d139e86fe35ba326
+ê
+`cloud-providerconsul-payment8006/src/main/java/com/springcloud/controller/PaymentController.java,0\6\066212e540f5de7deefa38a9c61c6927cfc62624
+É
+Scloud-providerconsul-payment8006/src/main/java/com/springcloud/PaymentMain8006.java,f\c\fc32639aa55cb4d40d7b245da63327dcf1748757
+T
+$cloud-consumerconsul-order80/pom.xml,4\e\4ea02ed2d36d62c4cfd731fe58cad64bb2280e62
