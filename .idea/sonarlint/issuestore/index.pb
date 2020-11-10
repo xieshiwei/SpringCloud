@@ -19,3 +19,11 @@ X
 Scloud-providerconsul-payment8006/src/main/java/com/springcloud/PaymentMain8006.java,f\c\fc32639aa55cb4d40d7b245da63327dcf1748757
 T
 $cloud-consumerconsul-order80/pom.xml,4\e\4ea02ed2d36d62c4cfd731fe58cad64bb2280e62
+Å
+Qcloud-consumerconsul-order80/src/main/java/com/springcloud/OrderConsulMain80.java,a\3\a36dceeeb8c8b7c01826e3702f4e33594fe79489
+ê
+`cloud-consumerconsul-order80/src/main/java/com/springcloud/controller/OrderConsulController.java,c\4\c4f65a5d8e3822991740cf70574c3478ed3d94b0
+è
+_cloud-consumerconsul-order80/src/main/java/com/springcloud/config/ApplicationContextConfig.java,f\6\f68fdb748641fe57c96bccf026030ded33f64cac
+y
+Icloud-eureka-server7002/src/main/java/com/springcloud/EurekaMain7002.java,8\3\8300036b7963b323eaf3247515c81869d8550ec1
