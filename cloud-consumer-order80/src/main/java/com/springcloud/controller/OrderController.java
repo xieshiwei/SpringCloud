@@ -2,11 +2,17 @@ package com.springcloud.controller;
 
 import com.springcloud.entities.CommonResult;
 import com.springcloud.entities.Payment;
-import lombok.extern.slf4j.Slf4j;
+import com.springcloud.lb.LoadBalancer;
+import org.springframework.cloud.client.ServiceInstance;
+import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.netflix.ribbon.RibbonClient;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.client.RestTemplate;
 
 import javax.annotation.Resource;
+import java.net.URI;
+import java.net.URL;
+import java.util.List;
 
 @RestController
 public class OrderController {
@@ -17,6 +23,18 @@ public class OrderController {
 
     @Resource
     private RestTemplate restTemplate;
+
+    /**
+     * Netflix服务发现，可以操作的服务
+     */
+    @Resource
+    private DiscoveryClient discoveryClient;
+
+    /**
+     * 自己写的负载均衡算法
+     */
+//    @Resource
+    private LoadBalancer loadBalancer;
 
     @PostMapping("/consumer/payment/create")
 //    @GetMapping("/consumer/payment/create")
@@ -29,5 +47,19 @@ public class OrderController {
         return restTemplate.getForObject(PAYMENT_URL + "/payment/get/" + id, CommonResult.class);
     }
 
+    /**
+     *
+     * @return
+     */
+    @GetMapping(value = "/consumer/payment/lb")
+    public String getPaymentLb() {
+        List<ServiceInstance> instances = discoveryClient.getInstances("CLOUD-PAYMENT-SERVICE");
+        if (instances == null || instances.size() <= 0) {
+            return null;
+        }
+        ServiceInstance serviceInstance = loadBalancer.instance(instances);
+        URI uri = serviceInstance.getUri();
+        return restTemplate.getForObject(uri + "/payment/lb", String.class);
+    }
 
 }
