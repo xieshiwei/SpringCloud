@@ -48,7 +48,7 @@ public class OrderController {
     }
 
     /**
-     *
+     * 实现自己的
      * @return
      */
     @GetMapping(value = "/consumer/payment/lb")
@@ -57,9 +57,9 @@ public class OrderController {
         if (instances == null || instances.size() <= 0) {
             return null;
         }
+        //手写负载均衡
         ServiceInstance serviceInstance = loadBalancer.instance(instances);
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
     }
-
 }
