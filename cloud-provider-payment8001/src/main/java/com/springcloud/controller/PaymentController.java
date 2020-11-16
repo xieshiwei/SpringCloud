@@ -1,5 +1,6 @@
 package com.springcloud.controller;
 
+
 import com.springcloud.entities.CommonResult;
 import com.springcloud.entities.Payment;
 import com.springcloud.service.PaymentService;
@@ -39,4 +40,20 @@ public class PaymentController {
             return new CommonResult(444, "没有对应记录,查询ID: " + id, null);
         }
     }
+
+    /**
+     * timeout
+     *
+     * @return
+     */
+    @GetMapping(value = "/payment/feign/timeout")
+    public String paymentFeignTimeout() {
+        try {
+            Thread.sleep(3000);
+        } catch (InterruptedException exp) {
+            exp.printStackTrace();
+        }
+        return serverPort;
+    }
+
 }
