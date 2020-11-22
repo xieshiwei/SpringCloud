@@ -17,7 +17,10 @@ public class GateWayConfig {
         RouteLocatorBuilder.Builder routes = routeLocatorBuilder.routes();
         //http://news.baidu.com/guonei
         //path_route_springcloud 相当于yml中routes.id
-        routes.route("path_route_springcloud", r -> r.path("/guonei").uri("http://news.baidu.com/guonei"));
+        // localhost:9527/guonei 直接跳转到  http://news.baidu.com/guone
+        routes.route("path_route_springcloud",
+                r -> r.path("/guonei")
+                        .uri("http://news.baidu.com/guonei"));
         return routes.build();
     }
 }
