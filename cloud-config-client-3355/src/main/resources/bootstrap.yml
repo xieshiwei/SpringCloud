@@ -17,3 +17,10 @@ eureka:
   client:
     service-url:
       defaultZone: http://localhost:7001/eureka
+
+# 暴露监控端点（动态更新配置文件）
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
