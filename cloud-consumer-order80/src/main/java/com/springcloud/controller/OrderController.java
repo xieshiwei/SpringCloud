@@ -49,6 +49,7 @@ public class OrderController {
 
     /**
      * 实现自己的
+     *
      * @return
      */
     @GetMapping(value = "/consumer/payment/lb")
@@ -61,5 +62,16 @@ public class OrderController {
         ServiceInstance serviceInstance = loadBalancer.instance(instances);
         URI uri = serviceInstance.getUri();
         return restTemplate.getForObject(uri + "/payment/lb", String.class);
+    }
+
+    /**
+     * zipkin+sleuth
+     *
+     * @return
+     */
+    @GetMapping("/consumer/payment/zipkin")
+    public String paymentZipkin() {
+        String result = restTemplate.getForObject(PAYMENT_URL + "/payment/zipkin/", String.class);
+        return result;
     }
 }
